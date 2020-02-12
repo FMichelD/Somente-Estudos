@@ -4,8 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Bag.c \
         Object.c \
-        Set.c \
         main.c \
         new.c
 
