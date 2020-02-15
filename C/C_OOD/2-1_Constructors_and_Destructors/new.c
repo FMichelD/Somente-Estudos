@@ -14,7 +14,7 @@ void * new (const void* _class, ...)
 
     if(class->ctor)
     {
-        va_list ap;
+        va_list ap = NULL;
         va_start(ap, _class);
         class->ctor(p, &ap);
         va_end(ap);

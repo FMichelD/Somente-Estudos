@@ -27,5 +27,5 @@ size_t sizeOf(const void* self)
     const struct Class *const *cp = self;
 
     assert(self && *cp);
-    return (*cp)->size;
+    return (*cp)->object_size(self);
 }

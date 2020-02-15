@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 #include "new.h"
 #include "Object.h"
@@ -6,14 +8,17 @@
 
 int main()
 {
-    void *a = new(String, "a");
-    void *aa = clone(a);
-    void *b = new(String, "b");
+    void* a = new(String);
+    void* aa = clone(a);
+    void* b = new(String, "b");
 
-    String sa;
+    struct Class* c;
+    struct String* sa;
+    c = (struct Class*)a;
+    sa = (struct String*)a;
 
     printf("sizeOf(a) == %lu\n", (unsigned long)sizeOf(a));
-    if (differ(a, b))
+    if (differ(sa, c))
         puts("ok");
 
     if (differ(a, aa))

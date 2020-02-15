@@ -10,6 +10,7 @@ struct Class {
     void* (*dtor) (void* self);
     void* (*clone) (const void* self);
     int (*differ) (const void* sefl, const void* b);
+    size_t (*object_size) (const void* self);
 };
 
 #endif // CLASS_H
