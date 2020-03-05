@@ -8,9 +8,10 @@
 
 int main()
 {
-    void* a = new(String);
+    void* a = new(String, "Teste de tamanho da string");
     void* aa = clone(a);
     void* b = new(String, "b");
+    void* e = new(String);
 
     struct Class* c;
     struct String* sa;
@@ -31,6 +32,10 @@ int main()
     else if (!differ(a, aa)) {
         puts("Clone!");
     }
+
+    printf("a: %s\n", getText(a));
+    printf("e: %s\n", getText(e));
+    printf("b: %s\n", getText(b));
 
     delete(a);
     delete(aa);

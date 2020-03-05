@@ -62,13 +62,20 @@ static size_t String_size(const void* _self)
 }
 //------------------------------------------------------------------------------
 
+char* getText(const void* _self){
+    const struct String* self = _self;
+
+    return  self->text;
+}
+
+//------------------------------------------------------------------------------
 static const struct Class _String = {
     sizeof(struct String),
     String_ctor,
     String_dtor,
     String_clone,
     String_differ,
-    String_size
+    String_size,
 };
 
 const void* String = &_String;

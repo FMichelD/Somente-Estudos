@@ -3,4 +3,6 @@
 
 extern const void* String;
 
+char* getText(const void* _self);
+
 #endif // STRING_H
